@@ -31,7 +31,7 @@ void nvvk::AppBase::onResize(int, int) {}
 void nvvk::AppBase::setup(const vk::Instance& instance, const vk::Device& device, const vk::PhysicalDevice& physicalDevice, uint32_t graphicsQueueIndex)
 {
   // Initialize function pointers
-  vk::DynamicLoader         dl;
+  vk::detail::DynamicLoader         dl;
   PFN_vkGetInstanceProcAddr vkGetInstanceProcAddr =
       dl.getProcAddress<PFN_vkGetInstanceProcAddr>("vkGetInstanceProcAddr");
   VULKAN_HPP_DEFAULT_DISPATCHER.init(vkGetInstanceProcAddr);
